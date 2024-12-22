@@ -9,13 +9,21 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "*"
+  ],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "tsc-extension.helloWorld",
-      "title": "Hello World"
-    }]
+    "configuration": {
+      "title": "Minimap Toggle Configuration",
+      "properties": {
+        "minimapToggle.minWidthForMinimap": {
+          "type": "number",
+          "default": 80,
+          "description": "The minimum editor width to show the minimap"
+        }
+      }
+    }
   },
   "scripts": {
     "lint": "eslint .",
